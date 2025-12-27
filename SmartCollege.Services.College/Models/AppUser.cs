@@ -1,0 +1,20 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SmartCollege.Services.College.Models
+{
+    public class AppUser
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Username { get; set; } = string.Empty;
+
+        [Required]
+        public string PasswordHash { get; set; } = string.Empty;
+
+        [Required]
+        public string Role { get; set; } = string.Empty;
+
+        public List<RefreshToken> RefreshTokens { get; set; } = [];
+    }
+}

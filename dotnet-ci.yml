@@ -1,0 +1,44 @@
+name: SmartCollege CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Display .NET version
+      run: dotnet --version
+
+    - name: Restore dependencies
+      run: dotnet restore SmartCollege.sln
+
+    - name: Build solution
+      run: dotnet build SmartCollege.sln --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test SmartCollege.sln --configuration Release --no-build --verbosity normal
+
+    - name: Publish Web API
+      run: dotnet publish SmartCollege.API -c Release -o publish/api
+
+    - name: Publish MVC App
+      run: dotnet publish SmartCollege.Web -c Release -o publish/web
+
+    - name: Upload published artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: smartcollege-build
+        path: publish/

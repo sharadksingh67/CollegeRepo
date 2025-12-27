@@ -1,0 +1,22 @@
+﻿@model List<SmartCollege.Web.Models.StudentViewModel>
+
+<h2>Students</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Age</th>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Course</td>
+            <td>@s.Age</td>
+        </tr>
+    }
+</table>
+
+<a href="/Account/Logout">Logout</a>

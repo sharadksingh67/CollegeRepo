@@ -1,0 +1,41 @@
+name: SmartCollege CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SmartCollege.sln
+
+    - name: Build
+      run: dotnet build SmartCollege.sln --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test SmartCollege.sln --no-build --verbosity normal
+
+    - name: Publish API
+      run: dotnet publish SmartCollege.API -c Release -o publish/api
+
+    - name: Publish MVC
+      run: dotnet publish SmartCollege.Web -c Release -o publish/mvc
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: smartcollege-artifacts
+        path: publish/
