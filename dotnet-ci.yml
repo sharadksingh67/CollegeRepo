@@ -32,7 +32,7 @@ jobs:
       run: dotnet test SmartCollege.sln --configuration Release --no-build --verbosity normal
 
     - name: Publish Web API
-      run: dotnet publish SmartCollege.API -c Release -o publish/api
+      run: dotnet publish SmartCollege.Services.College -c Release -o publish/api
 
     - name: Publish MVC App
       run: dotnet publish SmartCollege.Web -c Release -o publish/web
