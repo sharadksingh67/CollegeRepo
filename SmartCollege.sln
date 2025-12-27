@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCollege.API", "SmartCollege.Services.College\SmartCollege.API.csproj", "{AE54565A-0063-F1D2-55EA-E2B2F8DA28BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCollege.Web", "SmartCollege.Web\SmartCollege.Web.csproj", "{0CC89B65-52FB-4D9A-9B72-E2942652594A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{9C6578E7-E4FE-79BB-1635-F363CC1E80DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{E7A3C856-6834-D657-F2F0-05592DF2DDE9}"
+	ProjectSection(SolutionItems) = preProject
+		ci-cd.yml = ci-cd.yml
+		dotnet-ci.yml = dotnet-ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{089100B1-113F-4E66-888A-E83F3999EAFD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE54565A-0063-F1D2-55EA-E2B2F8DA28BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE54565A-0063-F1D2-55EA-E2B2F8DA28BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE54565A-0063-F1D2-55EA-E2B2F8DA28BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE54565A-0063-F1D2-55EA-E2B2F8DA28BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC89B65-52FB-4D9A-9B72-E2942652594A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC89B65-52FB-4D9A-9B72-E2942652594A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC89B65-52FB-4D9A-9B72-E2942652594A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC89B65-52FB-4D9A-9B72-E2942652594A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7A3C856-6834-D657-F2F0-05592DF2DDE9} = {9C6578E7-E4FE-79BB-1635-F363CC1E80DD}
+	EndGlobalSection
+EndGlobal
