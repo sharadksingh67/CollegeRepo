@@ -1,4 +1,12 @@
 <Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path="ci-cd.yml" />
+    <File Path="dotnet-ci.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
   <Project Path="SmartCollege.Services.College/SmartCollege.API.csproj" />
   <Project Path="SmartCollege.Web/SmartCollege.Web.csproj" Id="0cc89b65-52fb-4d9a-9b72-e2942652594a" />
 </Solution>
